@@ -46,3 +46,11 @@ Modificações - application.html.erb
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+
+
+    -----------------------------
+
+application.css
+   
+couldn't find file 'devise_bootstrap_views' with type 'text/css'
+Checked in these paths: 
