@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 # config.i18n.default_locale = :sv
 
-config.assets.initialize_on_precompile = false
+# config.assets.initialize_on_precompile = false
 
 
 module YudocRecibos
