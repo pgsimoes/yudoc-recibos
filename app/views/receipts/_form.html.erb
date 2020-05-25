@@ -1,0 +1,69 @@
+<%= form_for @receipt, :html => { :class => "form-horizontal receipt" } do |f| %>
+
+  <% if @receipt.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@receipt.errors.count, "error") %> prohibited this receipt from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @receipt.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :company_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :company_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:company_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :employee_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :employee_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:employee_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :year, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :year, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:year) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :month, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :month, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:month) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :receipt, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :receipt, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:receipt) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :viewed, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :viewed, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:viewed) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                receipts_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
