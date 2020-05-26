@@ -4,7 +4,8 @@ class ReceiptsController < ApplicationController
   # GET /receipts
   # GET /receipts.json
   def index
-    @receipts = Receipt.all
+    # @receipts = Receipt.all
+    @receipts = Receipt.where(company_id: current_user.id)
   end
 
   # GET /receipts/1
